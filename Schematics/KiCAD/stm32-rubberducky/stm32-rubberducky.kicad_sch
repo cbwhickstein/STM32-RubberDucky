@@ -8,7 +8,7 @@
 		(title "STM32 Rubber Ducky")
 		(date "2024-04-10")
 		(rev "1.0")
-		(comment 1 "cbwhickstein")
+		(comment 1 "Author: cbwhickstein")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x04_Pin"
