@@ -31,6 +31,8 @@ This folder contains the whole documentation of the project as well as usefull P
 
 # Schematic
 
+![You don't see THAT either? Strange...](./schematic/stm32-rubberducky.svg)
+
 ## Calculations
 
 ### Oscillator
@@ -61,3 +63,5 @@ Maybe the gain should be checked by the formula mentioned at the bottom of [AN28
 | 29               | PA8          | SPI1_CS (GPIO) |
 | 12               | PA2          | USART2_TX      |
 | 13               | PA3          | USART2_RX      |
+| 34               | PA13         | SWDIO          |
+| 37               | PA14         | SWCLK          |
