@@ -31,7 +31,7 @@ This folder contains the whole documentation of the project as well as usefull P
 
 # Schematic
 
-![You don't see THAT either? Strange...](./schematic/stm32-rubberducky.svg)
+<image src=./schematic/stm32-rubberducky.svg>
 
 ## Calculations
 
