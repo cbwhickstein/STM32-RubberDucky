@@ -11,6 +11,10 @@ This folder contains the whole documentation of the project as well as usefull P
   - [Calculations](#calculations)
     - [Oscillator](#oscillator)
   - [Pinouts](#pinouts)
+- [Coding](#coding)
+  - [RCC](#rcc)
+    - [Need to enable](#need-to-enable)
+    - [Clock Path](#clock-path)
 
 # System Diagramm
 ![Is your connection bad? This is you now -> O_O](./images/system_dia.png)
@@ -68,3 +72,15 @@ Maybe the gain should be checked by the formula mentioned at the bottom of [AN28
 | 13               | PA3          | USART2_RX      |
 | 34               | PA13         | SWDIO          |
 | 37               | PA14         | SWCLK          |
+
+
+# Coding
+
+## RCC
+
+### Need to enable
+- RCC_CR
+- ... 
+
+### Clock Path
+![Clock Tree Image](./images/stm32_clock_tree.png)
