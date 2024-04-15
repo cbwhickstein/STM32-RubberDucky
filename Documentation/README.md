@@ -44,7 +44,10 @@ $$C_L - C_S = \frac{C_{L1} \cdot C_{L2}}{C_{L1} + C_{L2}}$$
 with values of [LFXTAL033863Reel crystal](https://www.mouser.de/ProductDetail/IQD/LFXTAL033863Reel?qs=e4%2FAndAAwgIQqOoCaq8uAQ%3D%3D) and the stray capacitance mentioned in [Product Specs p. 48](https://www.st.com/resource/en/datasheet/stm32f103c6.pdf):
 
 $$C_L - C_S = 20\text{pf} - 10\text{pf} = \frac{C_{L1} \cdot C_{L2}}{C_{L1} + C_{L2}}$$
-$$=> C_{L1} = C_{L2} = 20\text{pf}$$
+
+Results in 
+
+$$C_{L1} = C_{L2} = 20\text{pf}$$
 
 Calculating the external Resistor $R_{EXT}$ with [AN2867 p.16](https://www.st.com/resource/en/application_note/cd00221665-oscillator-design-guide-for-stm8af-al-s-stm32-mcus-and-mpus-stmicroelectronics.pdf):
 
