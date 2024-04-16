@@ -13,7 +13,11 @@ This folder contains the whole documentation of the project as well as usefull P
   - [Pinouts](#pinouts)
 - [Coding](#coding)
   - [RCC](#rcc)
-    - [Need to enable](#need-to-enable)
+    - [Values to Set](#values-to-set)
+      - [CFGR](#cfgr)
+        - [Annotations](#annotations)
+      - [APB2ENR](#apb2enr)
+      - [APB1ENR](#apb1enr)
     - [Clock Path](#clock-path)
 
 # System Diagramm
@@ -77,10 +81,49 @@ Maybe the gain should be checked by the formula mentioned at the bottom of [AN28
 # Coding
 
 ## RCC
+Base Address: 0x4002 1000
 
-### Need to enable
-- RCC_CR
-- ... 
+### Values to Set
+
+#### CFGR
+Address offset: 0x0C
+
+| Name     | Bit(s) | Value  |
+|----------|--------|--------|
+| USBPRE   | 22     | 0b0    |
+| PLLMUL   | 21:18  | 0b0111 |
+| PLLXTPRE | 17     | 0b0    |
+| PLLSRC   | 16     | 0b1    |
+| PPRE2    | 13:11  | 0b000  |
+| PPRE1    | 10:8   | 0b100  |
+| HPRE     | 7:4    | 0b0000 |
+| SW       | 1:0    | 0b10   |
+
+##### Annotations
+1. First set all CFGR Bits except SW
+2. Wait for PLL ready by reading RCC_CR.PLLRDY flag (Bit 25)
+3. Set SW in CFGR
+4. wait for SWS bits (bits 3:2) in CFGR to be 0b10 
+5. start application
+
+
+#### APB2ENR
+Address offset: 0x18
+
+| Name     | Bit(s) | Value  |
+|----------|--------|--------|
+| IOPAEN   | 2      | 0b1    |
+| AFIOEN   | 0      | 0b1    |
+
+#### APB1ENR
+Address offset: 0x1C
+
+| Name     | Bit(s) | Value  |
+|----------|--------|--------|
+| USBEN    | 23     | 0b1    |
+| USART2EN | 17     | 0b1    |
+
+
 
 ### Clock Path
 ![Clock Tree Image](./images/stm32_clock_tree.png)
