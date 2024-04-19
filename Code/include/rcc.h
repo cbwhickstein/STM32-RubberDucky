@@ -89,3 +89,15 @@
 #define RCC_APB1ENR_USART2EN_MASK   (RCC_APB1ENR_USART2EN_VALUE << RCC_APB1ENR_USART2EN_OFFSET)
 
 
+/*-----------------------\
+| Struct                 |
+\-----------------------*/
+
+struct rcc {
+   uint8_t (*init)(void);
+};
+
+/*-----------------------\
+| Functions              |
+\-----------------------*/
+
