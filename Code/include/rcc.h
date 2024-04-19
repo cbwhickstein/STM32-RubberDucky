@@ -47,7 +47,8 @@
 #define RCC_APB2ENR_IOPAEN_OFFSET   2
 #define RCC_APB2ENR_AFIOEN_OFFSET   0
 
-
+#define RCC_APB1ENR_USBEN_OFFSET    23
+#define RCC_APB1ENR_USART2EN_OFFSET 17
 
 /*-----------------------\
 | Bit values             |
@@ -65,6 +66,9 @@
 #define RCC_APB2ENR_IOPAEN_VALUE    0b1         /* Enable Port A */
 #define RCC_APB2ENR_AFIOEN_VALUE    0b1         /* Enable AFIOs  */
 
+#define RCC_APB1ENR_USBEN_VALUE     0b1         /* Enable USB    */
+#define RCC_APB1ENR_USART2EN_VALUE  0b1         /* Enable USART2 */
+
 /*-----------------------\
 | Bit masks              |
 \-----------------------*/
@@ -80,4 +84,8 @@
 
 #define RCC_APB2ENR_IOPAEN_MASK     (RCC_APB2ENR_IOPAEN_VALUE << RCC_APB2ENR_IOPAEN_OFFSET)
 #define RCC_APB2ENR_AFIOEN_MASK     (RCC_APB2ENR_AFIOEN_VALUE << RCC_APB2ENR_AFIOEN_OFFSET)
+
+#define RCC_APB1ENR_USBEN_MASK      (RCC_APB1ENR_USBEN_VALUE << RCC_APB1ENR_USBEN_OFFSET)
+#define RCC_APB1ENR_USART2EN_MASK   (RCC_APB1ENR_USART2EN_VALUE << RCC_APB1ENR_USART2EN_OFFSET)
+
 
