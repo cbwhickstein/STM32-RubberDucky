@@ -101,3 +101,5 @@ struct rcc {
 | Functions              |
 \-----------------------*/
 
+rcc     new_rcc();
+void    rcc_init();
