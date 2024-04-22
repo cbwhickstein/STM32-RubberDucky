@@ -100,11 +100,13 @@ Address offset: 0x0C
 | SW       | 1:0    | 0b10   |
 
 ##### Annotations
-1. First set all CFGR Bits except SW
-2. Wait for PLL ready by reading RCC_CR.PLLRDY flag (Bit 25)
-3. Set SW in CFGR
-4. wait for SWS bits (bits 3:2) in CFGR to be 0b10 
-5. start application
+1. set all CFGR Bits except SW
+2. start oscillators by enabling the HSEON and PLLON Bits in RCC_CR
+3. Wait for HSE and PLL ready by reading RCC_CR.PLLRDY flag (Bit 25)
+4. Set SW in CFGR
+5. wait for SWS bits (bits 3:2) in CFGR to be 0b10 
+6. enable AFIOs
+7. start application
 
 
 #### APB2ENR
