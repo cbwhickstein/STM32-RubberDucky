@@ -19,6 +19,7 @@
 \-----------------------*/
 
 #define RCC_BASE_ADDRESS            0x40021000
+#define RCC_CR_OFFSET               0x00
 #define RCC_CFGR_OFFSET             0x0C
 #define RCC_APB2ENR_OFFSET          0x18
 #define RCC_APB1ENR_OFFSET          0x1C
@@ -26,14 +27,20 @@
 /*-----------------------\
 | Registers              |
 \-----------------------*/
-#define RCC_CFGR_REG                (*(volatile uint32_t *))(RCC_BASE_ADDRESS + RCC_CFGR_OFFSET)
-#define RCC_APB2ENR_REG             (*(volatile uint32_t *))(RCC_BASE_ADDRESS + RCC_APB2ENR_OFFSET)
-#define RCC_APB1ENR_REG             (*(volatile uint32_t *))(RCC_BASE_ADDRESS + RCC_APB1ENR_OFFSET)
+#define RCC_CR_REG                  *((volatile uint32_t *)(RCC_BASE_ADDRESS + RCC_CR_OFFSET))
+#define RCC_CFGR_REG                *((volatile uint32_t *)(RCC_BASE_ADDRESS + RCC_CFGR_OFFSET))
+#define RCC_APB2ENR_REG             *((volatile uint32_t *)(RCC_BASE_ADDRESS + RCC_APB2ENR_OFFSET))
+#define RCC_APB1ENR_REG             *((volatile uint32_t *)(RCC_BASE_ADDRESS + RCC_APB1ENR_OFFSET))
 
 
 /*-----------------------\
 | Bit offsets            |
 \-----------------------*/
+
+#define RCC_CR_PLLRDY_OFFSET        25
+#define RCC_CR_PLLON_OFFSET         24
+#define RCC_CR_HSERDY_OFFSET        17
+#define RCC_CR_HSEON_OFFSET         16
 
 #define RCC_CFGR_USBPRE_OFFSET      22
 #define RCC_CFGR_PLLMUL_OFFSET      18
@@ -54,6 +61,11 @@
 | Bit values             |
 \-----------------------*/
 
+#define RCC_CR_PLLRDY_VALUE         0b1         /* PLL is ready  */
+#define RCC_CR_PLLON_VALUE          0b1         /* Activate PLL  */
+#define RCC_CR_HSERDY_VALUE         0b1         /* HSE CLK ready */
+#define RCC_CR_HSEON_VALUE          0b1         /* Activate HSE  */
+
 #define RCC_CFGR_USBPRE_VALUE       0b0         /* /1.5          */
 #define RCC_CFGR_PLLMUL_VALUE       0b0111      /* x9            */
 #define RCC_CFGR_PLLXTPRE_VALUE     0b0         /* /1            */
@@ -72,6 +84,12 @@
 /*-----------------------\
 | Bit masks              |
 \-----------------------*/
+
+#define RCC_CR_PLLRDY_MASK          (RCC_CR_PLLRDY_VALUE << RCC_CR_PLLRDY_OFFSET)
+#define RCC_CR_PLLON_MASK           (RCC_CR_PLLON_VALUE << RCC_CR_PLLON_OFFSET)
+#define RCC_CR_HSERDY_MASK          (RCC_CR_HSERDY_VALUE << RCC_CR_HSERDY_OFFSET)
+#define RCC_CR_HSEON_MASK           (RCC_CR_HSEON_VALUE << RCC_CR_HSEON_OFFSET)
+
 
 #define RCC_CFGR_USBPRE_MASK        (RCC_CFGR_USBPRE_VALUE << RCC_CFGR_USBPRE_OFFSET)
 #define RCC_CFGR_PLLMUL_MASK        (RCC_CFGR_PLLMUL_VALUE << RCC_CFGR_PLLMUL_OFFSET)
@@ -101,5 +119,16 @@ struct rcc {
 | Functions              |
 \-----------------------*/
 
-rcc     new_rcc();
-void    rcc_init();
+/**
+ * @brief   Creates a new rcc struct with the 
+ *          correct set init function
+*/
+struct rcc     rcc_new();
+
+/**
+ * @brief   Inits the rcc of the STM32 according to
+ *          the application. Enabled ports can be seen
+ *          in documentation.
+*/
+void           rcc_init();
+
