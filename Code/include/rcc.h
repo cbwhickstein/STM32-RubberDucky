@@ -125,12 +125,12 @@ struct rcc {
  * @brief   Creates a new rcc struct with the 
  *          correct set init function
 */
-struct rcc     rcc_new();
+struct rcc     rcc_new     (void);
 
 /**
  * @brief   Inits the rcc of the STM32 according to
  *          the application. Enabled ports can be seen
  *          in documentation.
 */
-void           rcc_init();
+void           rcc_init    (void);
 
