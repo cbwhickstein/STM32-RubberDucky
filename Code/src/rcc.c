@@ -4,8 +4,10 @@ struct rcc rcc_new()
 {
     struct rcc result = 
     {
-        .init = rcc_init
-    };    
+        .init = (void*)rcc_init
+    };
+
+    return result;    
 }
 
 
