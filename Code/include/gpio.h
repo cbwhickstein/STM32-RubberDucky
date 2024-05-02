@@ -11,6 +11,7 @@
 #define GPIO_CRL_OFFSET                 0x00
 #define GPIO_CRH_OFFSET                 0x04
 #define GPIO_BSRR_OFFSET                0x10
+#define GPIO_ODR_OFFSET                 0x0C            
 
 /*-----------------------\
 | Registers              |
@@ -19,6 +20,8 @@
 #define GPIO_CRL_REG                    *((uint32_t *) (GPIO_A_BASE_ADDR + GPIO_CRL_OFFSET))
 #define GPIO_CRH_REG                    *((uint32_t *) (GPIO_A_BASE_ADDR + GPIO_CRH_OFFSET))
 #define GPIO_BSRR_REG                   *((uint32_t *) (GPIO_A_BASE_ADDR + GPIO_BSRR_OFFSET))
+#define GPIO_ODR_REG                   *((uint32_t *) (GPIO_A_BASE_ADDR + GPIO_ODR_OFFSET))
+
 
 /*-----------------------\
 | Config/Mode Offsets    |
@@ -105,10 +108,11 @@
 \-----------------------*/
 
 struct gpio {
-    bool        (*write)    (struct gpio, uint32_t);
-    uint32_t    (*read)     (struct gpio          );
-    bool        (*set)      (struct gpio, uint32_t);
-    bool        (*reset)    (struct gpio, uint32_t);
+    enum gpio_port  port                               ;
+    bool            (*write)    (struct gpio, uint32_t);
+    uint32_t        (*read)     (struct gpio          );
+    bool            (*set)      (struct gpio, uint32_t);
+    bool            (*reset)    (struct gpio, uint32_t);
 };
 
 /*-----------------------\
