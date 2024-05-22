@@ -41,6 +41,12 @@ This folder contains the whole documentation of the project as well as usefull P
 
 <image src=./schematic/stm32-rubberducky.svg>
 
+think about length matching!!!!
+
+Keramik caps haben voltage capacitance verlust!!!!
+
+Robert Ferenec
+
 ## Calculations
 
 ### Oscillator
@@ -129,3 +135,5 @@ Address offset: 0x1C
 
 ### Clock Path
 ![Clock Tree Image](./images/stm32_clock_tree.png)
+
+

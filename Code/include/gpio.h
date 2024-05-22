@@ -68,39 +68,39 @@
 | Set / reset offsets    |
 \-----------------------*/
 
-#define GPIO_BSRR_SET_0_OFFSET          0
-#define GPIO_BSRR_SET_1_OFFSET          1
-#define GPIO_BSRR_SET_2_OFFSET          2
-#define GPIO_BSRR_SET_3_OFFSET          3
-#define GPIO_BSRR_SET_4_OFFSET          4
-#define GPIO_BSRR_SET_5_OFFSET          5
-#define GPIO_BSRR_SET_6_OFFSET          6
-#define GPIO_BSRR_SET_7_OFFSET          7
-#define GPIO_BSRR_SET_8_OFFSET          8
-#define GPIO_BSRR_SET_9_OFFSET          9
-#define GPIO_BSRR_SET_10_OFFSET         10
-#define GPIO_BSRR_SET_11_OFFSET         11
-#define GPIO_BSRR_SET_12_OFFSET         12
-#define GPIO_BSRR_SET_13_OFFSET         13
-#define GPIO_BSRR_SET_14_OFFSET         14
-#define GPIO_BSRR_SET_15_OFFSET         15
+#define GPIO_BSRR_SET_0_BIT             0
+#define GPIO_BSRR_SET_1_BIT             1
+#define GPIO_BSRR_SET_2_BIT             2
+#define GPIO_BSRR_SET_3_BIT             3
+#define GPIO_BSRR_SET_4_BIT             4
+#define GPIO_BSRR_SET_5_BIT             5
+#define GPIO_BSRR_SET_6_BIT             6
+#define GPIO_BSRR_SET_7_BIT             7
+#define GPIO_BSRR_SET_8_BIT             8
+#define GPIO_BSRR_SET_9_BIT             9
+#define GPIO_BSRR_SET_10_BIT            10
+#define GPIO_BSRR_SET_11_BIT            11
+#define GPIO_BSRR_SET_12_BIT            12
+#define GPIO_BSRR_SET_13_BIT            13
+#define GPIO_BSRR_SET_14_BIT            14
+#define GPIO_BSRR_SET_15_BIT            15
 
-#define GPIO_BSRR_RESET_0_OFFSET        16
-#define GPIO_BSRR_RESET_1_OFFSET        17
-#define GPIO_BSRR_RESET_2_OFFSET        18
-#define GPIO_BSRR_RESET_3_OFFSET        19
-#define GPIO_BSRR_RESET_4_OFFSET        20
-#define GPIO_BSRR_RESET_5_OFFSET        21
-#define GPIO_BSRR_RESET_6_OFFSET        22
-#define GPIO_BSRR_RESET_7_OFFSET        23
-#define GPIO_BSRR_RESET_8_OFFSET        24
-#define GPIO_BSRR_RESET_9_OFFSET        25
-#define GPIO_BSRR_RESET_10_OFFSET       26
-#define GPIO_BSRR_RESET_11_OFFSET       27
-#define GPIO_BSRR_RESET_12_OFFSET       28
-#define GPIO_BSRR_RESET_13_OFFSET       29
-#define GPIO_BSRR_RESET_14_OFFSET       30
-#define GPIO_BSRR_RESET_15_OFFSET       31
+#define GPIO_BSRR_RESET_0_BIT           16
+#define GPIO_BSRR_RESET_1_BIT           17
+#define GPIO_BSRR_RESET_2_BIT           18
+#define GPIO_BSRR_RESET_3_BIT           19
+#define GPIO_BSRR_RESET_4_BIT           20
+#define GPIO_BSRR_RESET_5_BIT           21
+#define GPIO_BSRR_RESET_6_BIT           22
+#define GPIO_BSRR_RESET_7_BIT           23
+#define GPIO_BSRR_RESET_8_BIT           24
+#define GPIO_BSRR_RESET_9_BIT           25
+#define GPIO_BSRR_RESET_10_BIT          26
+#define GPIO_BSRR_RESET_11_BIT          27
+#define GPIO_BSRR_RESET_12_BIT          28
+#define GPIO_BSRR_RESET_13_BIT          29
+#define GPIO_BSRR_RESET_14_BIT          30
+#define GPIO_BSRR_RESET_15_BIT          31
 
 
 /*-----------------------\
