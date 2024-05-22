@@ -1,17 +1,24 @@
 #include <rcc.h>
+#include <gpio.h>
 
 int main() 
 {
-    struct rcc rcc = rcc_new();
+    
+    struct rcc rcc;
+    struct gpio gpio;
+    
+    rcc = rcc_new();
+    gpio = gpio_new(PORT_A);
+
     rcc.init();
 
-    volatile int i = 1;
 
-    while (1){
-        i += 1;
-        i += 2;
-        i -= 3;
+    while (1) {
+        gpio.set(gpio, GPIO_BSRR_SET_0_BIT);
+        for (volatile int i = 0; i<100000; i++); //eddit the max boundary for changeing delay time
+        gpio.reset(gpio, GPIO_BSRR_RESET_0_BIT);
+        for (volatile int i = 0; i<100000; i++); //eddit the max boundary for changeing delay time
     }
 
-    return i;
+    return 0;
 }
